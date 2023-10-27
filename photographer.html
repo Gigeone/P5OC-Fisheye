@@ -13,7 +13,18 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
+      </div>
+      <div class="photograph_select">
+        <label for="choix" id="tri">Trier par</label>
+        <select name="tri" id="choix" aria-label="Order by" tabindex="5">
+            <option value="Popularité">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+        </select>
+      </div>
+      <div class="medias-container">
+
       </div>
     </main>
     <div id="contact_modal">
@@ -22,15 +33,67 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
+        <p class="name"></p>
+				<form 
+            name="reserve"
+            action="photographer.html"
+            method="post"
+            id="form-action">
+              <div class="form_container">
+                <div class="input_container">
+                  <label 
+                  for="prenom">Prénom</label>
+                  <input
+                  type="text" 
+                  name="prenom" 
+                  id="prenom"
+                  aria-label="First name"
+                  minlength="2"
+                  required
+                  />
+                </div>
+                <div class="input_container">
+                  <label 
+                  for="nom">Nom</label>
+                  <input 
+                  type="text" 
+                  name="nom" 
+                  id="nom"
+                  aria-label="Last name"
+                  minlength="2"
+                  required
+                  />
+                </div>
+                <div class="input_container">
+                  <label 
+                  for="email">Email</label>
+                  <input 
+                  type="email" 
+                  name="email" 
+                  id="email"
+                  aria-label="Email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
+                  />
+                </div>
+                <div class="input_container">
+                  <label for="commentaire">Votre message</label>
+                <textarea 
+                name="commentaire"
+                id="commentaire"
+                aria-label="Your message"
+                required
+                ></textarea>
+                </div>
+              </div>
+              <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
+            </form>
 			</div>
 		</div>
+    <script src="scripts/constructor/constructorPhotographer.js"></script>
+    <script src="scripts/constructor/constructorMedia.js"></script>
+    <script src="scripts/factories/factoryPhotographer.js"></script>
+    <script src="scripts/factories/factoryMedia.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

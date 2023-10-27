@@ -39,12 +39,50 @@ h1 {
     flex-direction: column;
 }
 
+.photographer_section article a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin: 10px 0;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photographer_section article h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #901C1C
+}
+
+.photographer_section .slogan {
+    font-size: 10px;
+    margin: 6px;
+} 
+
+.photographer_section .tarif {
+    font-size: 9px;
+    color: #757575;
+    margin: 0;
+} 
+
+#contact_modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
