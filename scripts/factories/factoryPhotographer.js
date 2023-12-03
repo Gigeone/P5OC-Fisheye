@@ -3,7 +3,7 @@ import { Photographer } from "../constructor/constructorPhotographer.js";
 export class PhotographerFactory {
   async fetchData() {
     try {
-      const response = await fetch("../../data/photographers.json");
+      const response = await fetch("././data/photographers.json");
       if (!response.ok) {
         throw new Error("La requête Fetch a échoué.");
       }
