@@ -1,100 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/94a0a8027e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="/index.html"
+        ><img
+          src="assets/images/logo.png"
+          class="logo"
+          alt="Fisheye Home page"
+          tabindex="1"
+      /></a>
     </header>
-    <main id="main">
-      <div class="photograph-header">
-        <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
-      </div>
+    <main id="main" aria-hidden="false">
+      <div class="photograph-header"></div>
+      <!-- Selector -->
       <div class="photograph_select">
         <label for="choix" id="tri">Trier par</label>
         <select name="tri" id="choix" aria-label="Order by" tabindex="5">
-            <option value="Popularité">Popularité</option>
-            <option value="Date">Date</option>
-            <option value="Titre">Titre</option>
+          <option value="Popularité">Popularité</option>
+          <option value="Date">Date</option>
+          <option value="Titre">Titre</option>
         </select>
       </div>
-      <div class="medias-container">
-
+      <!-- Médias container -->
+      <div class="medias-container"></div>
+      <!-- Sum Container-->
+      <section class="sum_container">
+        <div class="total_container">
+          <span></span>
+          <i class="fa-solid fa-heart heart" aria-label="likes"></i>
+        </div>
+        <p class="prix"></p>
+      </section>
+      <!-- Lightbox -->
+      <div
+        id="lightbox_container"
+        aria-label="Image closeup view"
+        aria-hidden="true"
+        role="dialog"
+      >
+        <div id="lightbox">
+          <div class="media_container_lightbox"></div>
+          <p class="titre" tabindex="8"></p>
+          <i
+            class="fa-solid fa-chevron-left"
+            id="g"
+            aria-label="Previous image"
+            tabindex="9"
+          ></i>
+          <i
+            class="fa-solid fa-chevron-right"
+            id="d"
+            aria-label="Next image"
+            tabindex="11"
+          ></i>
+          <i
+            class="fa-solid fa-xmark"
+            id="cross"
+            aria-label="Close dialog"
+            tabindex="12"
+          ></i>
+        </div>
       </div>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
+    <!-- Form Modal -->
+    <div
+      id="contact_modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img
+            src="assets/icons/close.svg"
+            class="closeModal"
+            onclick="closeModal()"
+            alt="Close Contact form"
+            aria-label="Close Form"
+            tabindex="0"
+          />
         </header>
         <p class="name"></p>
-				<form 
-            name="reserve"
-            action="photographer.html"
-            method="post"
-            id="form-action">
-              <div class="form_container">
-                <div class="input_container">
-                  <label 
-                  for="prenom">Prénom</label>
-                  <input
-                  type="text" 
-                  name="prenom" 
-                  id="prenom"
-                  aria-label="First name"
-                  minlength="2"
-                  required
-                  />
-                </div>
-                <div class="input_container">
-                  <label 
-                  for="nom">Nom</label>
-                  <input 
-                  type="text" 
-                  name="nom" 
-                  id="nom"
-                  aria-label="Last name"
-                  minlength="2"
-                  required
-                  />
-                </div>
-                <div class="input_container">
-                  <label 
-                  for="email">Email</label>
-                  <input 
-                  type="email" 
-                  name="email" 
-                  id="email"
-                  aria-label="Email"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                  required
-                  />
-                </div>
-                <div class="input_container">
-                  <label for="commentaire">Votre message</label>
-                <textarea 
+        <form
+          name="reserve"
+          action="photographer.html"
+          method="post"
+          id="form-action"
+          role="form"
+        >
+          <div class="form_container">
+            <div class="input_container">
+              <label for="prenom">Prénom</label>
+              <input
+                type="text"
+                name="prenom"
+                id="prenom"
+                aria-label="First name"
+                minlength="2"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="nom">Nom</label>
+              <input
+                type="text"
+                name="nom"
+                id="nom"
+                aria-label="Last name"
+                minlength="2"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                aria-label="Email"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="commentaire">Votre message</label>
+              <textarea
                 name="commentaire"
                 id="commentaire"
                 aria-label="Your message"
                 required
-                ></textarea>
-                </div>
-              </div>
-              <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
-            </form>
-			</div>
-		</div>
-    <script src="scripts/constructor/constructorPhotographer.js"></script>
-    <script src="scripts/constructor/constructorMedia.js"></script>
-    <script src="scripts/factories/factoryPhotographer.js"></script>
-    <script src="scripts/factories/factoryMedia.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
+              ></textarea>
+            </div>
+          </div>
+          <button class="contact_button" type="submit" aria-label="Send">
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

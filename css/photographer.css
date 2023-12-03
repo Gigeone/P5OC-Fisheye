@@ -2,25 +2,6 @@
     display: none;
 }
 
-/* .photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-} */
-/* 
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-} */
-
 .modal {
     margin: 5% auto;
     border-radius: 5px;
@@ -155,35 +136,6 @@ select {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-
-}
-
-
-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-form label {
-    color: #312E2E;
-    font-size: 20px;
-}
-
-form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 12px;
-}
-
-form input {
-    width: 100%;
-    height: 55px;
-    border: none;
-    border-radius: 5px;
 }
 
 .successMessage {
@@ -255,4 +207,90 @@ article #easy {
 
 .description p {
     margin: 0;
+} 
+
+
+.compteur {
+    display: flex;
+    align-items: center;
+} 
+
+.compteur i {
+    margin: 0 10px;
+    cursor: pointer;
+} 
+
+#lightbox_container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:white;
+    display: none;
+}
+
+#lightbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#g {
+    position: absolute;
+    left:0;
+    color: #901C1C;
+    font-size: 50px;
+    cursor: pointer;
+} 
+
+#d {
+    position: absolute;
+    right: 0;
+    color: #901C1C;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#cross {
+    position: absolute;
+    right: 0;
+    top: 5%;
+    color: #901C1C;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#lightbox #easy {
+
+    width: 750px;
+}
+
+
+
+.sum_container {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    bottom: 0;
+    right: 5%;
+    width: 250px;
+    height: 50px;
+    background: #DB8876;
+} 
+
+.total_container {
+    display: flex;
+    align-items: center;
+}
+
+.total_container span {
+    margin: 0 6px;
 } 
