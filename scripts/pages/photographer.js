@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const fetchAndDisplayMedia = async (photographerId) => {
     try {
       const mediaFactory = new MediaFactory();
+      console.log(mediaFactory);
       const mediaData = await mediaFactory.createMedias();
+      console.log(mediaData);
       const filteredData = mediaData.filter(
         (media) => media.photographerId === parseInt(photographerId, 10)
       );
@@ -247,6 +249,23 @@ document.addEventListener("DOMContentLoaded", async () => {
           }
         }
       );
+      icons[i].addEventListener(
+        "keyup",
+        // Increment or decrement likes and total likes
+        (e) => {
+          if (e.key === "Enter") {
+            if (e.target.classList.contains("liked")) {
+              likeElements[i].innerHTML--;
+              totalLikesElement.innerHTML--;
+              e.target.classList.remove("liked");
+            } else {
+              likeElements[i].innerHTML++;
+              totalLikesElement.innerHTML++;
+              e.target.classList.add("liked");
+            }
+          }
+        }
+      );
     }
   };
 
@@ -295,11 +314,9 @@ const lightboxModal = document.querySelector("#lightbox_container"); // select t
 const firstFocusableElement =
   lightboxModal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
 
-console.log(firstFocusableElement);
 const focusableContent = lightboxModal.querySelectorAll(focusableElements);
-console.log(focusableContent);
+
 const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
-console.log(lastFocusableElement);
 document.addEventListener("keydown", function (e) {
   let isTabPressed = e.key === "Tab" || e.keyCode === 9;
 

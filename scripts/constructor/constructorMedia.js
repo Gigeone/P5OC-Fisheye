@@ -1,8 +1,8 @@
 export class Media {
   constructor(data) {
-    if (data.hasOwnProperty("image")) {
+    if (data.image) {
       return new CustomImage(data);
-    } else if (data.hasOwnProperty("video")) {
+    } else if (data.video) {
       return new Video(data);
     } else {
       throw "Unknown type format";
@@ -27,9 +27,9 @@ class CustomImage {
       <img id="easy" src="../../assets/${this.photographerId}/${this.image}" aria-label="${this.title}" alt="${this.title}" tabindex="6">
       <div class="description">
         <h2 class="title">${this.title}</h2>
-        <div class="compteur" tabindex="7">
-          <p class="like">${this.likes}</p>
-          <i class="fa-solid fa-heart icon"></i>
+        <div class="compteur">
+          <p class="like" tabindex="7">${this.likes}</p>
+          <i class="fa-solid fa-heart icon" tabindex="8"></i>
         </div>
       </div>
     </article>
@@ -56,9 +56,9 @@ class Video {
       </video>
       <div class="description">
         <h2 class="title">${this.title}</h2>
-        <div class="compteur" tabindex="7">
-          <p class="like">${this.likes}</p>
-          <i class="fa-solid fa-heart icon"></i>
+        <div class="compteur" >
+          <p class="like" tabindex="7">${this.likes}</p>
+          <i class="fa-solid fa-heart icon" tabindex="8"></i>
         </div>
       </div>
     </article>
