@@ -13,13 +13,12 @@ const displayModal = () => {
   modal.style.display = "block";
   cross.focus();
 };
-
-document.addEventListener("DOMContentLoaded", function () {
+export const addHeaderListener = () => {
   document
     .querySelector(".contact_button")
     .addEventListener("click", displayModal);
   console.log("Le DOM est affiché");
-});
+};
 
 /**
  * Closes the modal by hiding it.

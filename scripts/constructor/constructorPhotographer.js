@@ -25,14 +25,14 @@ export class Photographer {
   }
 
   headerRenderHTML() {
-    const picture = `././assets/photographers/${this.portrait}`;
+    const picture = `/assets/photographers/${this.portrait}`;
     return `
     <div class="Photograph_detail" tabindex="2">
       <h2>${this.name}</h2>
       <h3>${this.country}, ${this.city}</h3>
       <p>${this.tagline}</p>
     </div>
-    <button class="contact_button" onclick="displayModal()" tabindex="3">Contactez-moi</button>
+    <button class="contact_button" tabindex="3">Contactez-moi</button>
     <img src="${picture}" aria-label="${this.name}" alt="${this.name}" tabindex="4">
   `;
   }

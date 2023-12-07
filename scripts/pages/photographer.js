@@ -1,5 +1,6 @@
 import { MediaFactory } from "../factories/factoryMedia.js";
 import { PhotographerFactory } from "../factories/factoryPhotographer.js";
+import { addHeaderListener } from "../utils/contactForm.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const photographersId = new URL(location.href).searchParams.get("id");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         throw new Error("Photographer not found");
       }
       header.innerHTML += photographer.headerRenderHTML();
+      addHeaderListener();
       priceFunc(photographer);
     } catch (error) {
       console.error("Error displaying photographer header: " + error);

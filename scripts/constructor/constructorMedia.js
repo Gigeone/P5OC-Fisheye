@@ -24,7 +24,7 @@ class CustomImage {
   imageRenderHTML() {
     return `
     <article>
-      <img id="easy" src="../../assets/${this.photographerId}/${this.image}" aria-label="${this.title}" alt="${this.title}" tabindex="6">
+      <img id="easy" src="/assets/${this.photographerId}/${this.image}" aria-label="${this.title}" alt="${this.title}" tabindex="6">
       <div class="description">
         <h2 class="title">${this.title}</h2>
         <div class="compteur">
